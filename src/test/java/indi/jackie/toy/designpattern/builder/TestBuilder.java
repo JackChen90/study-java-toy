@@ -33,5 +33,8 @@ public class TestBuilder {
         builder.setPart(sequences);
         product = builder.builderProduct();
         System.out.println(product);
+
+        Disorder disorder = new Disorder.Builder()
+                .setName("1").setAddress("sdaf").setEmail("a@blackfish.cn").build();
     }
 }

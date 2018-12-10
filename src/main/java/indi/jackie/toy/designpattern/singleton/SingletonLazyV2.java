@@ -3,7 +3,7 @@ package indi.jackie.toy.designpattern.singleton;
 /**
  * @author jackie chen
  * @create 2018/12/5
- * @description SingletonLazyV2 懒汉模式 <p>枚举实现<p/>
+ * @description SingletonLazyV2 饿汉模式 <p>枚举实现<p/>
  */
 public enum SingletonLazyV2 {
     Instance;
