@@ -5,11 +5,11 @@ import java.util.List;
 /**
  * @author jackie chen
  * @create 2023/6/4
- * @description ModuleTypeUtil
+ * @description TaskCanRunUtil
  */
-public class ModuleTypeUtil {
+public class TaskCanRunUtil {
 
-    public static Integer sumModuleType(List<ModuleType> moduleTypeList) {
+    private static Integer sumModuleType(List<ModuleType> moduleTypeList) {
         Integer moduleType = 0;
         for (ModuleType modelType : moduleTypeList) {
             moduleType += modelType.getCode();
@@ -17,8 +17,9 @@ public class ModuleTypeUtil {
         return moduleType;
     }
 
-    public static boolean allExist(List<ModuleType> moduleTypeList, Integer sumModuleType) {
-        for (ModuleType moduleType : moduleTypeList) {
+    public static boolean canRun(List<ModuleType> currentModuleTypeList, List<ModuleType> taskNeedModuleTypeList) {
+        int sumModuleType = sumModuleType(taskNeedModuleTypeList);
+        for (ModuleType moduleType : currentModuleTypeList) {
             if ((sumModuleType & moduleType.getCode()) != moduleType.getCode()) {
                 return false;
             }

@@ -30,8 +30,8 @@ public class ModuleClient {
         List<ModuleType> moduleTypes = moduleDTOList.stream()
                 .map(moduleDTO -> ModuleType.getByType(moduleDTO.getModuleType())).collect(java.util.stream.Collectors.toList());
 
-        boolean task1CanStart = ModuleTypeUtil.allExist(moduleTypes, ModuleTypeUtil.sumModuleType(task1ModuleTypeList));
-        boolean task2CanStart = ModuleTypeUtil.allExist(moduleTypes, ModuleTypeUtil.sumModuleType(task2ModuleTypeList));
+        boolean task1CanStart = TaskCanRunUtil.canRun(moduleTypes, task1ModuleTypeList);
+        boolean task2CanStart = TaskCanRunUtil.canRun(moduleTypes, task2ModuleTypeList);
 
         System.out.println("task1CanStart: " + task1CanStart);
         System.out.println("task2CanStart: " + task2CanStart);
